@@ -97,14 +97,14 @@ class PhotoViewController: UIViewController {
 
         view = UILabel()
 
-        view.frame = CGRect(x: 0, y: 0, width: 285, height: 83)
+        view.frame = CGRect(x: 0, y: 0, width: 380, height: 170)
 
         view.backgroundColor = .clear
 
 
         view.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
 
-        view.font = UIFont(name: "MyanmarKhyay-Regular", size: 30)
+        view.font = UIFont(name: "Helvetica Neue", size: 40)
 
 
         // Line height: 40 pt
@@ -121,122 +121,13 @@ class PhotoViewController: UIViewController {
 
         view.translatesAutoresizingMaskIntoConstraints = false
 
-        view.widthAnchor.constraint(equalToConstant: 285).isActive = true
+        view.widthAnchor.constraint(equalToConstant: 385).isActive = true
 
-        view.heightAnchor.constraint(equalToConstant: 83).isActive = true
+        view.heightAnchor.constraint(equalToConstant: 170).isActive = true
 
-        view.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: 49).isActive = true
+        //view.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: 49).isActive = true
 
-        view.topAnchor.constraint(equalTo: parent.topAnchor, constant: 90).isActive = true
-
-
-
-
-        // Recycle It!
-
-
-        view = UILabel()
-
-        view.frame = CGRect(x: 0, y: 0, width: 140, height: 86)
-
-        view.backgroundColor = .clear
-
-
-        view.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
-
-        view.font = UIFont(name: "Roboto-Regular", size: 30)
-
-
-        // Line height: 35 pt
-
-
-        view.text = "Recycle It!"
-
-
-        parent = self.view!
-
-        parent.addSubview(view)
-
-        view.translatesAutoresizingMaskIntoConstraints = false
-
-        view.widthAnchor.constraint(equalToConstant: 140).isActive = true
-
-        view.heightAnchor.constraint(equalToConstant: 86).isActive = true
-
-        view.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: 116).isActive = true
-
-        view.topAnchor.constraint(equalTo: parent.topAnchor, constant: 501).isActive = true
-
-
-
-
-        // Ellipse 1
-
-
-        view = UILabel()
-
-        view.frame = CGRect(x: 0, y: 0, width: 180, height: 180)
-
-        view.backgroundColor = .white
-
-
-        view.layer.backgroundColor = UIColor(red: 0.769, green: 0.769, blue: 0.769, alpha: 1).cgColor
-
-
-        parent = self.view!
-
-        parent.addSubview(view)
-
-        view.translatesAutoresizingMaskIntoConstraints = false
-
-        view.widthAnchor.constraint(equalToConstant: 180).isActive = true
-
-        view.heightAnchor.constraint(equalToConstant: 180).isActive = true
-
-        view.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: 96).isActive = true
-
-        view.topAnchor.constraint(equalTo: parent.topAnchor, constant: 282).isActive = true
-
-
-
-
-        // not plastic
-
-
-        view = UILabel()
-
-        view.frame = CGRect(x: 0, y: 0, width: 66, height: 16)
-
-        view.backgroundColor = .clear
-
-
-        view.textColor = UIColor(red: 0.769, green: 0.769, blue: 0.769, alpha: 1)
-
-        view.font = UIFont(name: "Roboto-Regular", size: 14)
-
-
-        // Line height: 16 pt
-
-
-        view.text = "not plastic"
-
-
-        parent = self.view!
-
-        parent.addSubview(view)
-
-        view.translatesAutoresizingMaskIntoConstraints = false
-
-        view.widthAnchor.constraint(equalToConstant: 66).isActive = true
-
-        view.heightAnchor.constraint(equalToConstant: 16).isActive = true
-
-        view.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: 153).isActive = true
-
-        view.topAnchor.constraint(equalTo: parent.topAnchor, constant: 552).isActive = true
-
-
-
+        //view.topAnchor.constraint(equalTo: parent.topAnchor, constant: 90).isActive = true
 
         // Rectangle 1
 
@@ -265,47 +156,6 @@ class PhotoViewController: UIViewController {
 
         view.topAnchor.constraint(equalTo: parent.topAnchor, constant: 183).isActive = true
 
-
-
-
-        // Rectangle 2
-
-
-        view = UILabel()
-
-        view.frame = CGRect(x: 0, y: 0, width: 375, height: 629)
-
-        view.backgroundColor = .clear
-
-
-        var shadows = UIView()
-
-        shadows.frame = view.frame
-
-        shadows.clipsToBounds = false
-
-        view.addSubview(shadows)
-
-
-        let shadowPath0 = UIBezierPath(roundedRect: shadows.bounds, cornerRadius: 0)
-
-        let _layer0 = CALayer()
-
-        _layer0.shadowPath = shadowPath0.cgPath
-
-        _layer0.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).cgColor
-
-        _layer0.shadowOpacity = 1
-
-        _layer0.shadowRadius = 9
-
-        _layer0.shadowOffset = CGSize(width: 0, height: 0)
-
-        _layer0.bounds = shadows.bounds
-
-        _layer0.position = shadows.center
-
-        shadows.layer.addSublayer(_layer0)
 
 
         var shapes = UIView()
@@ -343,75 +193,6 @@ class PhotoViewController: UIViewController {
 
         view.topAnchor.constraint(equalTo: parent.topAnchor, constant: 183).isActive = true
 
-
-
-
-        // Line
-
-
-        view = UILabel()
-
-        view.frame = CGRect(x: 0, y: 0, width: 16, height: 9)
-
-        view.backgroundColor = .clear
-
-
-        view.layer.backgroundColor = UIColor(red: 0.769, green: 0.769, blue: 0.769, alpha: 1).cgColor
-
-        var stroke = UIView()
-
-        stroke.bounds = view.bounds.insetBy(dx: -0.9, dy: -0.9)
-
-        stroke.center = view.center
-
-        view.addSubview(stroke)
-
-        view.bounds = view.bounds.insetBy(dx: -0.9, dy: -0.9)
-
-        stroke.layer.borderWidth = 1.8
-
-        stroke.layer.borderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
-
-
-        parent = self.view!
-
-        parent.addSubview(view)
-
-        view.translatesAutoresizingMaskIntoConstraints = false
-
-
-
-
-        /* Mark
-
-        Selection, success
-        */
-
-        view = UILabel()
-
-        view.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-
-        view.backgroundColor = .clear
-
-
-
-        parent = self.view!
-
-        parent.addSubview(view)
-
-        view.translatesAutoresizingMaskIntoConstraints = false
-
-        view.widthAnchor.constraint(equalToConstant: 50).isActive = true
-
-        view.heightAnchor.constraint(equalToConstant: 50).isActive = true
-
-        view.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: 291).isActive = true
-
-        view.topAnchor.constraint(equalTo: parent.topAnchor, constant: 733).isActive = true
-
-
-
-
         // Frame
 
         //imageView.image = UIImage(named: "recycle")
@@ -419,7 +200,7 @@ class PhotoViewController: UIViewController {
         let imageName = "recycle"
         let image = UIImage(named: imageName)
         let imageView = UIImageView(image: image!)
-        imageView.frame = CGRect(x: 0, y: 0, width: 236.86, height: 208.25)
+        imageView.frame = CGRect(x: -10, y: -100, width: 270, height: 208.25)
         
     
         view = UILabel()
@@ -451,14 +232,14 @@ class PhotoViewController: UIViewController {
 
         view = UILabel()
 
-        view.frame = CGRect(x: 0, y: 0, width: 158, height: 86)
+        view.frame = CGRect(x: 50, y: 0, width: 158, height: 86)
 
         view.backgroundColor = .clear
 
 
         view.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
 
-        view.font = UIFont(name: "MyanmarKhyay-Regular", size: 30)
+        view.font = UIFont(name: "Helvetica Neue", size: 30)
 
 
         // Line height: 40 pt
@@ -496,7 +277,7 @@ class PhotoViewController: UIViewController {
 
         view.textColor = UIColor(red: 0.769, green: 0.769, blue: 0.769, alpha: 1)
 
-        view.font = UIFont(name: "Roboto-Regular", size: 16)
+        view.font = UIFont(name: "Helvetica Neue", size: 14)
 
 
         // Line height: 19 pt
@@ -531,7 +312,7 @@ class PhotoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -539,6 +320,5 @@ class PhotoViewController: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
 
 }
