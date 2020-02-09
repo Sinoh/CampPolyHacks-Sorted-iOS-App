@@ -18,6 +18,10 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     
     var takePhoto = false
     
+    // Sent from server to phone
+    var isRecycleable = false
+    var labels = [String]()
+    
     override func viewDidLoad() {
         super.viewWillDisappear(false)
         navigationController?.setNavigationBarHidden(false, animated: false)
@@ -141,7 +145,17 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         let task = session.dataTask(with: request as URLRequest, completionHandler: {data, response, error -> Void in
             let dataString = NSString(data: data!, encoding:String.Encoding.utf8.rawValue)
             print("Response: \(String(describing: dataString))")
+           
+            do {
+                let json = try JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any]
+                // try to read out a string array
+                self.labels = json["labels"] as! [String]
+                print(self.labels)
             
+                self.isRecycleable = ((json["isRecycleable"] as? Bool) != nil)
+                print(self.isRecycleable)
+            } catch {}
+
         })
         task.resume()
     }
@@ -152,3 +166,4 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     }
 
 }
+
