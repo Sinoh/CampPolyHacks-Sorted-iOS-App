@@ -23,7 +23,7 @@ class PhotoViewController: UIViewController {
 
         view.frame = CGRect(x: 0, y: 0, width: 377, height: 282)
 
-        view.backgroundColor = .white
+        view.backgroundColor = .clear
 
 
         let layer0 = CAGradientLayer()
@@ -99,7 +99,7 @@ class PhotoViewController: UIViewController {
 
         view.frame = CGRect(x: 0, y: 0, width: 285, height: 83)
 
-        view.backgroundColor = .white
+        view.backgroundColor = .clear
 
 
         view.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
@@ -139,7 +139,7 @@ class PhotoViewController: UIViewController {
 
         view.frame = CGRect(x: 0, y: 0, width: 140, height: 86)
 
-        view.backgroundColor = .white
+        view.backgroundColor = .clear
 
 
         view.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
@@ -207,7 +207,7 @@ class PhotoViewController: UIViewController {
 
         view.frame = CGRect(x: 0, y: 0, width: 66, height: 16)
 
-        view.backgroundColor = .white
+        view.backgroundColor = .clear
 
 
         view.textColor = UIColor(red: 0.769, green: 0.769, blue: 0.769, alpha: 1)
@@ -245,7 +245,7 @@ class PhotoViewController: UIViewController {
 
         view.frame = CGRect(x: 0, y: 0, width: 375, height: 629)
 
-        view.backgroundColor = .white
+        view.backgroundColor = .clear
 
 
         view.layer.backgroundColor = UIColor(red: 0.769, green: 0.769, blue: 0.769, alpha: 1).cgColor
@@ -275,7 +275,7 @@ class PhotoViewController: UIViewController {
 
         view.frame = CGRect(x: 0, y: 0, width: 375, height: 629)
 
-        view.backgroundColor = .white
+        view.backgroundColor = .clear
 
 
         var shadows = UIView()
@@ -353,7 +353,7 @@ class PhotoViewController: UIViewController {
 
         view.frame = CGRect(x: 0, y: 0, width: 16, height: 9)
 
-        view.backgroundColor = .white
+        view.backgroundColor = .clear
 
 
         view.layer.backgroundColor = UIColor(red: 0.769, green: 0.769, blue: 0.769, alpha: 1).cgColor
@@ -391,7 +391,7 @@ class PhotoViewController: UIViewController {
 
         view.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
 
-        view.backgroundColor = .white
+        view.backgroundColor = .clear
 
 
 
@@ -414,19 +414,25 @@ class PhotoViewController: UIViewController {
 
         // Frame
 
+        //imageView.image = UIImage(named: "recycle")
 
+        let imageName = "recycle"
+        let image = UIImage(named: imageName)
+        let imageView = UIImageView(image: image!)
+        imageView.frame = CGRect(x: 0, y: 0, width: 236.86, height: 208.25)
+        
+    
         view = UILabel()
 
         view.frame = CGRect(x: 0, y: 0, width: 236.86, height: 208.25)
 
-        view.backgroundColor = .white
-
+        view.backgroundColor = .clear
 
 
         parent = self.view!
 
         parent.addSubview(view)
-
+        
         view.translatesAutoresizingMaskIntoConstraints = false
 
         view.widthAnchor.constraint(equalToConstant: 236.86).isActive = true
@@ -437,7 +443,7 @@ class PhotoViewController: UIViewController {
 
         view.topAnchor.constraint(equalTo: parent.topAnchor, constant: 360).isActive = true
 
-
+        view.addSubview(imageView)
 
 
         // Recycle It!
@@ -447,7 +453,7 @@ class PhotoViewController: UIViewController {
 
         view.frame = CGRect(x: 0, y: 0, width: 158, height: 86)
 
-        view.backgroundColor = .white
+        view.backgroundColor = .clear
 
 
         view.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
@@ -485,7 +491,7 @@ class PhotoViewController: UIViewController {
 
         view.frame = CGRect(x: 0, y: 0, width: 75, height: 19)
 
-        view.backgroundColor = .white
+        view.backgroundColor = .clear
 
 
         view.textColor = UIColor(red: 0.769, green: 0.769, blue: 0.769, alpha: 1)
