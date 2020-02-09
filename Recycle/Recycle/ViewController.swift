@@ -86,6 +86,16 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             }
         }
     }
+    
+
+    // Convert CIImage to CGImage
+    func convert(cmage:CIImage) -> UIImage
+    {
+         let context:CIContext = CIContext.init(options: nil)
+         let cgImage:CGImage = context.createCGImage(cmage, from: cmage.extent)!
+         let image:UIImage = UIImage.init(cgImage: cgImage)
+         return image
+    }
 
     func getImageFromSampleBuffer (buffer:CMSampleBuffer) -> UIImage? {
         if let pixelBuffer = CMSampleBufferGetImageBuffer(buffer) {
