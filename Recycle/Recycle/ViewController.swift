@@ -81,7 +81,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             
         
             let dataOutput = AVCaptureVideoDataOutput()
-        dataOutput.videoSettings = [((kCVPixelBufferPixelFormatTypeKey as NSString) as String): NSNumber(value: kCVPixelFormatType_32BGRA)]
+            dataOutput.videoSettings = [((kCVPixelBufferPixelFormatTypeKey as NSString) as String): NSNumber(value: kCVPixelFormatType_32BGRA)]
             
             dataOutput.alwaysDiscardsLateVideoFrames = true
             if captureSession.canAddOutput(dataOutput) {
@@ -121,8 +121,12 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         if takePhoto {
             takePhoto = false
             if let image = self.getImageFromSampleBuffer(buffer: sampleBuffer) {
+                
+                let photoVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PhotoVC") as! PhotoViewController
+                photoVC.takenPhoto = image
+                
                 DispatchQueue.main.async {
-                    let photoVC = UIStoryboard(
+                    self.present(photoVC, animated: true, completion: nil)
                 }
             }
         }

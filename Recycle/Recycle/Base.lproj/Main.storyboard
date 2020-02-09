@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ria-hk-oeF">
-                                <rect key="frame" x="165" y="753" width="85" height="63"/>
+                                <rect key="frame" x="165" y="721" width="85" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Take Picture"/>
                                 <connections>
@@ -36,7 +36,7 @@
         <!--Photo View Controller-->
         <scene sceneID="VLt-Z7-llu">
             <objects>
-                <viewController storyboardIdentifier="PhotoVC" id="AKO-08-aSL" customClass="PhotoViewController" customModule="Recycle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="AKO-08-aSL" customClass="PhotoViewController" customModule="Recycle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fU4-s9-BoD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
