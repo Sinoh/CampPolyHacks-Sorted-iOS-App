@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
-
+    
     let captureSession = AVCaptureSession()
     var previewLayer:CALayer!
     
@@ -19,6 +19,8 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     var takePhoto = false
     
     override func viewDidLoad() {
+        super.viewWillDisappear(false)
+        navigationController?.setNavigationBarHidden(false, animated: false)
         super.viewDidLoad()
     }
     
@@ -36,6 +38,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         }
         
         let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+            previewLayer.videoGravity = .resizeAspectFill
             self.previewLayer = previewLayer
             self.view.layer.addSublayer(self.previewLayer)
             self.previewLayer.frame = self.view.layer.frame
@@ -67,6 +70,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             captureDevice = availableDevices.first
             beginSession()
     }
+
 
     @IBAction func takePhoto(_ sender: Any) {
         takePhoto = true
