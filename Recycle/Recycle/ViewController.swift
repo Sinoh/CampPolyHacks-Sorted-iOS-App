@@ -17,6 +17,7 @@ class ViewController: UIViewController {
         // here is where we start up the camera
         
         let captureSesssion = AVCaptureSession()
+        captureSesssion.sessionPreset = .photo
         
         guard let captureDevice =
             AVCaptureDevice.default(for: .video) else {return}
@@ -25,6 +26,10 @@ class ViewController: UIViewController {
         
         captureSesssion.addInput(input)
         captureSesssion.startRunning()
+        
+        let previewLayer = AVCaptureVideoPreviewLayer(session: captureSesssion)
+        view.layer.addSublayer(previewLayer)
+        previewLayer.frame = view.frame
     }
 }
 
