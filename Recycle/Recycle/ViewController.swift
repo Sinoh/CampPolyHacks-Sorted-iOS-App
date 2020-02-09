@@ -76,13 +76,12 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         if takePhoto {
             takePhoto = false
             if let image = self.getImageFromSampleBuffer(buffer: sampleBuffer) {
-                print(sampleBuffer)
                 DispatchQueue.main.async {
                     let photoVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PhotoVC") as! PhotoViewController
                     photoVC.takenPhoto = image
                     
                     self.present(photoVC, animated: true, completion: nil) //{self.stopCaptureSession()})
-                    self.callRestAPI()
+                    self.callRestAPI(image)
                 }
             }
         }
@@ -114,27 +113,22 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         
     }
     
-    func callRestAPI() {
+    func callRestAPI(_ image:UIImage) {
         var getUrl : String = "http://justinnuwin.com:8000/label?location="
         // Call function to get GPS coordinate in <lat,long> format
         getUrl.append("123.123,456.456")
         let request = NSMutableURLRequest(url: NSURL(string: getUrl)! as URL)
         let session = URLSession.shared
-        request.httpMethod = "POST"
-
-        let params = ["username":"username", "password":"password"] as Dictionary<String, String>
-
-        //request.httpBody = try? JSONSerialization.data(withJSONObject: params, options: [])
-
         request.addValue("image/jpeg", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.httpMethod = "POST"
+        request.httpBody = image.jpegData(compressionQuality: 50)
 
         let task = session.dataTask(with: request as URLRequest, completionHandler: {data, response, error -> Void in
             let dataString = NSString(data: data!, encoding:String.Encoding.utf8.rawValue)
-            print("Response: \(String(describing: dataString))")})
+            print("Response: \(String(describing: dataString))")
             
-            
-
+        })
         task.resume()
     }
     
