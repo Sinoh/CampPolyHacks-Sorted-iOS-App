@@ -85,10 +85,19 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             takePhoto = false
             if let image = self.getImageFromSampleBuffer(buffer: sampleBuffer) {
                 DispatchQueue.main.async {
-                    let photoVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PhotoVC") as! PhotoViewController
-                    photoVC.takenPhoto = image
                     
-                    self.present(photoVC, animated: true, completion: nil) //{self.stopCaptureSession()})
+                    if  self.labels.contains("plastic bottle"){
+                        let bottleVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BottleVC") as! BottleViewController
+                        self.present(bottleVC, animated: true, completion: nil) //{self.stopCaptureSession()})
+                    } else if self.labels.contains("tin can") {
+                        let photoVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PhotoVC") as! PhotoViewController
+                        self.present(photoVC, animated: true, completion: nil) //{self.stopCaptureSession()})
+                    } else {
+                        let trashVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TrashVC") as! TrashViewController
+                        self.present(trashVC, animated: true, completion: nil) //{self.stopCaptureSession()})
+                    }
+                    
+                    
                     self.callRestAPI(image)
                 }
             }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D46189C23F0701900827580 /* TrashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D46189B23F0701900827580 /* TrashViewController.swift */; };
+		4D46189E23F0730000827580 /* BottleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D46189D23F0730000827580 /* BottleViewController.swift */; };
 		4D74D1D723EF77F90031F3E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74D1D623EF77F90031F3E8 /* AppDelegate.swift */; };
 		4D74D1D923EF77F90031F3E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74D1D823EF77F90031F3E8 /* SceneDelegate.swift */; };
 		4D74D1DB23EF77F90031F3E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74D1DA23EF77F90031F3E8 /* ViewController.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D46189B23F0701900827580 /* TrashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashViewController.swift; sourceTree = "<group>"; };
+		4D46189D23F0730000827580 /* BottleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleViewController.swift; sourceTree = "<group>"; };
 		4D74D1D323EF77F90031F3E8 /* Recycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D74D1D623EF77F90031F3E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D74D1D823EF77F90031F3E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +108,8 @@
 				4D74D1D623EF77F90031F3E8 /* AppDelegate.swift */,
 				4D74D1D823EF77F90031F3E8 /* SceneDelegate.swift */,
 				4D74D1DA23EF77F90031F3E8 /* ViewController.swift */,
+				4D46189D23F0730000827580 /* BottleViewController.swift */,
+				4D46189B23F0701900827580 /* TrashViewController.swift */,
 				4D74D20623EF90690031F3E8 /* PhotoViewController.swift */,
 				4D74D1DC23EF77F90031F3E8 /* Main.storyboard */,
 				4D74D1DF23EF77FA0031F3E8 /* Assets.xcassets */,
@@ -262,7 +268,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D46189E23F0730000827580 /* BottleViewController.swift in Sources */,
 				4D74D1DB23EF77F90031F3E8 /* ViewController.swift in Sources */,
+				4D46189C23F0701900827580 /* TrashViewController.swift in Sources */,
 				4D74D20723EF90690031F3E8 /* PhotoViewController.swift in Sources */,
 				4D74D1D723EF77F90031F3E8 /* AppDelegate.swift in Sources */,
 				4D74D1D923EF77F90031F3E8 /* SceneDelegate.swift in Sources */,

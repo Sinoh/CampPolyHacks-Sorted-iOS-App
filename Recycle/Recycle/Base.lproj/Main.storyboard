@@ -38,9 +38,24 @@
             <point key="canvasLocation" x="1050.7246376811595" y="129.91071428571428"/>
         </scene>
         <!--View Controller-->
+        <scene sceneID="hUf-xu-fIe">
+            <objects>
+                <viewController id="uZE-C8-1gu" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZvR-CQ-1Ts">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="ReP-AP-TFr"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FxS-ve-kqh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1880" y="-1882"/>
+        </scene>
+        <!--Bottle View Controller-->
         <scene sceneID="KI2-ZW-AHB">
             <objects>
-                <viewController id="8Z1-DB-RLZ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BottleVC" id="8Z1-DB-RLZ" customClass="BottleViewController" customModule="Recycle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JfI-XM-fYf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,10 +67,10 @@
             </objects>
             <point key="canvasLocation" x="1883" y="-1198"/>
         </scene>
-        <!--View Controller-->
+        <!--Trash View Controller-->
         <scene sceneID="IMv-2w-ocG">
             <objects>
-                <viewController id="EH6-Vm-Cob" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TrashVC" id="EH6-Vm-Cob" customClass="TrashViewController" customModule="Recycle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yq9-P1-86r">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

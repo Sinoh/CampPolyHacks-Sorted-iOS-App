@@ -1,15 +1,16 @@
 //
-//  PhotoViewController.swift
+//  TrashViewController.swift
 //  Recycle
 //
-//  Created by Jeffery Ho on 2/8/20.
+//  Created by Jeffery Ho on 2/9/20.
 //  Copyright © 2020 SLOWip. All rights reserved.
 //
 
 import UIKit
 
-class PhotoViewController: UIViewController {
+class TrashViewController: UIViewController {
 
+    
     var takenPhoto:UIImage?
     @IBOutlet weak var imageView: UIImageView!
     
@@ -21,38 +22,18 @@ class PhotoViewController: UIViewController {
 
         var view = UILabel()
 
-        view.frame = CGRect(x: 0, y: 0, width: 375, height: 20)
-
-        view.backgroundColor = .white
-
-
-
-        var parent = self.view!
-
-        parent.addSubview(view)
-
-        view.translatesAutoresizingMaskIntoConstraints = false
-
-
-
-
-        // Rectangle 18
-
-
-        view = UILabel()
-
         view.frame = CGRect(x: 0, y: 0, width: 377, height: 282)
 
-        view.backgroundColor = .white
+        view.backgroundColor = .clear
 
 
         let layer0 = CAGradientLayer()
 
         layer0.colors = [
 
-          UIColor(red: 0.975, green: 0.236, blue: 0.236, alpha: 1).cgColor,
+          UIColor(red: 1, green: 0.66, blue: 0, alpha: 1).cgColor,
 
-          UIColor(red: 1, green: 0.747, blue: 0.367, alpha: 1).cgColor
+          UIColor(red: 1, green: 0.858, blue: 0.583, alpha: 1).cgColor
 
         ]
 
@@ -62,7 +43,7 @@ class PhotoViewController: UIViewController {
 
         layer0.endPoint = CGPoint(x: 0.75, y: 0.5)
 
-        layer0.transform = CATransform3DMakeAffineTransform(CGAffineTransform(a: 1.5, b: -0.76, c: 0.76, d: 2.67, tx: -0.59, ty: -0.58))
+        layer0.transform = CATransform3DMakeAffineTransform(CGAffineTransform(a: 1.06, b: -0.57, c: 0.57, d: 1.89, tx: -0.28, ty: -0.35))
 
         layer0.bounds = view.bounds.insetBy(dx: -0.5*view.bounds.size.width, dy: -0.5*view.bounds.size.height)
 
@@ -72,7 +53,7 @@ class PhotoViewController: UIViewController {
 
 
 
-        parent = self.view!
+        var parent = self.view!
 
         parent.addSubview(view)
 
@@ -132,7 +113,7 @@ class PhotoViewController: UIViewController {
 
         view.textAlignment = .center
 
-        view.text = "We found CAN"
+        view.text = "We found Plastic"
 
 
         parent = self.view!
@@ -217,7 +198,7 @@ class PhotoViewController: UIViewController {
 
         //imageView.image = UIImage(named: "recycle")
 
-        let imageName = "recycle"
+        let imageName = "trash"
         let image = UIImage(named: imageName)
         let imageView = UIImageView(image: image!)
         imageView.frame = CGRect(x: -10, y: -100, width: 270, height: 208.25)
@@ -252,7 +233,7 @@ class PhotoViewController: UIViewController {
 
         view = UILabel()
 
-        view.frame = CGRect(x: 50, y: 0, width: 158, height: 86)
+        view.frame = CGRect(x: 50, y: 0, width: 200, height: 86)
 
         view.backgroundColor = .clear
 
@@ -265,7 +246,8 @@ class PhotoViewController: UIViewController {
         // Line height: 40 pt
 
 
-        view.text = "Recycle It!"
+        view.text = "Trash It!"
+        
         view.textAlignment = .center
 
 
@@ -275,7 +257,7 @@ class PhotoViewController: UIViewController {
 
         view.translatesAutoresizingMaskIntoConstraints = false
 
-        view.widthAnchor.constraint(equalToConstant: 158).isActive = true
+        view.widthAnchor.constraint(equalToConstant: 200).isActive = true
 
         view.heightAnchor.constraint(equalToConstant: 86).isActive = true
 
@@ -284,8 +266,8 @@ class PhotoViewController: UIViewController {
         view.topAnchor.constraint(equalTo: parent.topAnchor, constant: 532).isActive = true
 
 
-        /*
 
+        /*
         // not plastic
 
 
@@ -342,5 +324,4 @@ class PhotoViewController: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-
 }
