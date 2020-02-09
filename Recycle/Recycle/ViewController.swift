@@ -76,16 +76,28 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         if takePhoto {
             takePhoto = false
             if let image = self.getImageFromSampleBuffer(buffer: sampleBuffer) {
-                print(sampleBuffer)
                 DispatchQueue.main.async {
                     let photoVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PhotoVC") as! PhotoViewController
                     photoVC.takenPhoto = image
                     
                     self.present(photoVC, animated: true, completion: nil) //{self.stopCaptureSession()})
-                    self.callRestAPI()
+                    let imageBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)!
+                    let ciimage : CIImage = CIImage(cvPixelBuffer: imageBuffer)
+                    let cImage : UIImage = self.convert(cmage: ciimage)
+                    self.callRestAPI(cImage: cImage)
                 }
             }
         }
+    }
+    
+
+    // Convert CIImage to CGImage
+    func convert(cmage:CIImage) -> UIImage
+    {
+         let context:CIContext = CIContext.init(options: nil)
+         let cgImage:CGImage = context.createCGImage(cmage, from: cmage.extent)!
+         let image:UIImage = UIImage.init(cgImage: cgImage)
+         return image
     }
 
     func getImageFromSampleBuffer (buffer:CMSampleBuffer) -> UIImage? {
@@ -114,14 +126,27 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         
     }
     
-    func callRestAPI() {
+
+    
+    
+    
+    func callRestAPI(cImage:UIImage) {
         var getUrl : String = "http://justinnuwin.com:8000/label?location="
         // Call function to get GPS coordinate in <lat,long> format
         getUrl.append("123.123,456.456")
         let request = NSMutableURLRequest(url: NSURL(string: getUrl)! as URL)
         let session = URLSession.shared
         request.httpMethod = "POST"
+        
+        var jpeg: Data? { cImage.jpegData(compressionQuality: 1) }
 
+
+        //let jpegData = cImage
+        //print(jpeg) // 416318   number of bytes contained by the data object
+        //let imageFromData =  jpegData.image
+        //print(imageFromData.size)  // (719.0, 808.0)
+        
+        
         let params = ["username":"username", "password":"password"] as Dictionary<String, String>
 
         //request.httpBody = try? JSONSerialization.data(withJSONObject: params, options: [])
